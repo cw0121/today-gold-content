@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "今日含金量",
+  "version": "1.5.0",
+  "description": "实时更新黄金行情与品牌金价",
+  "permissions": ["storage", "alarms", "offscreen", "declarativeNetRequest"],
+  "host_permissions": ["https://api.jijinhao.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "jijinhao_headers",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
